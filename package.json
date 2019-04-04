@@ -1,0 +1,32 @@
+{
+  "name": "@o-ui/toast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/toast.common.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iu-o/toast.git"
+  },
+  "files": [
+    "/dist"
+  ],
+  "keywords": [
+    "Vue.js",
+    "toast",
+    "o-ui"
+  ],
+  "author": "o-ui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iu-o/toast/issues"
+  },
+  "homepage": "https://github.com/iu-o/toast#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0"
+  }
+}
