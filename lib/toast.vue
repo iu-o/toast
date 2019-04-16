@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showToast" class="toast-mask" @touchstart="handleStart">
+  <div v-if="showToast" class="toast-mask" @touchstart="handleStart" :style="{    'background-color': bgColor}">
     <div class="toast-wrap">
       <div class="toast" v-html="message"></div>
     </div>
@@ -26,6 +26,15 @@ export default {
     callBack: {
       type: Function,
       default: () => {}
+    },
+    opacity: {
+      type: Number,
+      default: 0
+    }
+  },
+  computed: {
+    bgColor () {
+      return `rgba(0, 0, 0, ${this.opacity})`
     }
   },
   methods: {
@@ -45,7 +54,7 @@ export default {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, .6);
+  // background-color: rgba(0, 0, 0, .0);
   .toast-wrap {
     position: absolute;
     top: 50%;

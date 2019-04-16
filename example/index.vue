@@ -18,7 +18,8 @@ export default {
     custom () {
       this.$toast({
         message: 'Lorem ipsum dolor sit amet',
-        duration: 3000
+        duration: 30000,
+        opacity: 0.9
       }).then(() => {
         console.log('res')
       })
