@@ -6,7 +6,6 @@ A simple toast in vue
 main.js
 ```javascript
 import toast from '@o-ui/toast'
-import '@o-ui/toast/dist/toast.css'
 Vue.use(toast)
 ```
 

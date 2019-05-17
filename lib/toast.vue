@@ -47,28 +47,27 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .toast-mask {
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  // background-color: rgba(0, 0, 0, .0);
-  .toast-wrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .toast {
-    padding: 16px 20px;
-    background-color: rgba(#000, .6);
-    border-radius: 8px;
-    font-size: 14px;
-    color: #fff;
-    line-height: 22px;
-    max-width: 280px;
-  }
+}
+.toast-mask .toast-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.toast-mask .toast {
+  padding: 16px 20px;
+  background-color: rgba(#000, .6);
+  border-radius: 8px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 22px;
+  max-width: 280px;
 }
 </style>
