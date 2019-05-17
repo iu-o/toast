@@ -5,6 +5,8 @@ import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import { terser } from 'rollup-plugin-terser';
 import minimist from 'minimist';
+import postcss from 'rollup-plugin-postcss';
+import pxtorem from 'postcss-pxtorem';
 
 const argv = minimist(process.argv.slice(2));
 
@@ -13,6 +15,20 @@ const baseConfig = {
   plugins: [
     replace({
       'process.env.NODE_ENV': JSON.stringify('production'),
+    }),
+    postcss({
+      plugins: [
+        pxtorem({
+          root_value: 50,
+          unitPrecision: 6,
+          propWhiteList: ['width', 'height', 'min-width', 'min-height', 'font-size', 'line-height', 'letter-spacing', 'text-indent', 'margin', 'margin-bottom', 'margin-top', 'margin-left', 'margin-right', 'padding', 'padding-bottom', 'padding-top', 'padding-left', 'padding-right', 'top', 'bottom', 'left', 'right', 'background-size', 'max-width', 'border-radius', 'border-top-left-radius', 'border-bottom-left-radius', 'border-top-right-radius', 'border-bottom-right-radius', 'border', 'max-height', 'max-width', 'background-position', 'box-shadow'],
+          selectorBlackList: ['leave-as-px'],
+          replace: process.env.NODE_ENV === 'production',
+          mediaQuery: false,
+          minPixelValue: 0
+        }),
+      ],
+      minimize: true
     }),
     commonjs(),
     vue({
